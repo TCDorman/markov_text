@@ -47,23 +47,25 @@ def make_chains(text_string):
 
     # your code goes here
     words = text_string.split()
-
+    print(words)
+    
     words.append(None)
-
+    
     for i in range(len(words) - 2):
-        key = (words[i], words [i+1])
-        value = words[i+2]
+        key = (words[i], words[i + 1])
+        value = words[i + 2]
 
-    if key not in chains:
-        chains[key] = []
+        if key not in chains:
+            chains[key] = []
 
-    chains[key].append(value)    
+        chains[key].append(value)    
 
     return chains
 
 
 def make_text(chains):
     """Return text from chains."""
+    print(len(chains))
     key = choice(list(chains.keys()))
     words = [key[0], key[1]]
     word = choice(chains[key])
